@@ -21,6 +21,8 @@ public class Stand {
 	private String qrstand;
 	
 	private String qrtilbakemelding;
+	
+	private Integer poengsum;
 
 	public Stand() {
 		
@@ -32,6 +34,18 @@ public class Stand {
 		this.youtubelink = youtubeLink;
 		setQrStand(navn);
 		setQrTilbakemelding(navn);
+		poengsum = 0;
+	}
+
+	public Stand(String navn, String beskrivelse, String youtubelink,
+			Integer poengsum) {
+		super();
+		this.navn = navn;
+		this.beskrivelse = beskrivelse;
+		this.youtubelink = youtubelink;
+		setQrStand(navn);	
+		setQrTilbakemelding(navn);
+		this.poengsum = poengsum;
 	}
 
 	public String getNavn() {
@@ -78,9 +92,17 @@ public class Stand {
 		QRGenerator.generateQR("http://localhost:8080/tilbakemelding?navn=" + navn, 350, 350, QR_Path);
 	}
 
+	public Integer getPoengsum() {
+		return poengsum;
+	}
+
+	public void setPoengsum(Integer poengsum) {
+		this.poengsum = poengsum;
+	}
+
 	@Override
 	public String toString() {
-		return "Stand [navn=" + navn + ", beskrivelse=" + beskrivelse + "]";
+		return navn + " score: " + poengsum + "\n";
 	}
 	
 	
