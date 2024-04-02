@@ -28,13 +28,11 @@ public class BrukerUtil {
 			
 			for(Cookie cookie : cookies) {
 				if (cookie.getName().equals("ID")) {
-//					System.out.println("sjekkOmNyBruker:  false");
 					model.addAttribute("ID", cookie.getValue());
 					return false;
 				}
 			}
 		}
-//		System.out.println("sjekkOmNyBruker:  true");
 		return true;
 	}
 	
@@ -49,8 +47,23 @@ public class BrukerUtil {
 			cookie.setMaxAge(cookieTimer);
 			response.addCookie(cookie);
 			model.addAttribute("ID", ""+nr);
-//			System.out.println("Ny bruker: " + nr);
 		}
+	}
+	
+	public int getBrukerId(HttpServletRequest request) {
+		Cookie[] cookies = request.getCookies();
+		int id = -1;
+
+		if(cookies != null) {
+			for(Cookie cookie : cookies) {
+				if(cookie.getName().equals("ID")) {
+					String string = cookie.getValue();
+					return Integer.parseInt(string);
+				}
+			}
+		}
+		
+		return id;
 	}
 	
 }

@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
@@ -14,7 +16,7 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
 
-
+@Component
 public class QRGenerator {
 	
 	public static void generateQR(String text, int width, int heigth,String qr_path) {
@@ -33,8 +35,4 @@ public class QRGenerator {
 		}
 		
 	}
-	
-	
-	
-
 }
