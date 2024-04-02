@@ -1,4 +1,4 @@
-package no.hvl.dat108.webshop.interfaces;
+package no.hvl.dat108.webshop.repos;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

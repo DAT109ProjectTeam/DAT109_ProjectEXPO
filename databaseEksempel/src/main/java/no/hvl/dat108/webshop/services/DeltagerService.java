@@ -3,8 +3,9 @@ package no.hvl.dat108.webshop.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import no.hvl.dat108.webshop.interfaces.DeltagerRepo;
+
 import no.hvl.dat108.webshop.objects.Deltager;
+import no.hvl.dat108.webshop.repos.DeltagerRepo;
 
 @Service
 public class DeltagerService {

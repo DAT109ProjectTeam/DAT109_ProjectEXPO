@@ -12,10 +12,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import no.hvl.dat108.webshop.interfaces.DeltagerRepo;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import no.hvl.dat108.webshop.objects.Deltager;
+import no.hvl.dat108.webshop.repos.DeltagerRepo;
 import no.hvl.dat108.webshop.services.DeltagerService;
 
 import org.junit.runner.RunWith;
