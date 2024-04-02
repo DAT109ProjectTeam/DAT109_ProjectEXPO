@@ -59,8 +59,6 @@ public class TilbakemeldingController {
 		Stemme stemme = new Stemme(brukerutil.getBrukerId(request), navn, rating);
 		stemmeservice.lagreStemme(stemme);
 		
-		System.out.println(standservice.rangerStander().toString());
-		
         model.addAttribute("rating", rating);
         model.addAttribute("navn", navn);
 

@@ -142,7 +142,7 @@ video {
 
 		<c:if test="${Rolle == 'Admin'}">
 			<div class="spectator-button">
-				<p>Test</p>
+				<p>Du er med i juryen</p>
 				<a href="spectatorlogin">
 					<button class="button" type="submit" role="button">Tilskuer(Spectator)</button>
 				</a>
@@ -159,12 +159,10 @@ video {
 		<br> -->
 
 		<c:if test="${Rolle == 'Jury'}">
-			<div class="jury-button">
+			<form class="jury-button" action="RangertVisning" method="GET">
 				<p>Test</p>
-				<a href="jurylogin">
-					<button class="button" role="button">Jury</button>
-				</a>
-			</div>
+				<button class="button" role="button" type="submit" >RangertVisning</button>
+			</form>
 		</c:if>
 
 		<p>Value of 'Rolle' cookie: ${Rolle}</p>

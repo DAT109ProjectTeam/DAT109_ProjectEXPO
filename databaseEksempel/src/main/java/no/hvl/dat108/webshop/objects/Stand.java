@@ -32,21 +32,23 @@ public class Stand {
 		this.navn = navn;
 		this.beskrivelse = beskrivelse;
 		this.youtubelink = youtubeLink;
-		setQrStand(navn);
-		setQrTilbakemelding(navn);
+		this.qrstand = "";
+		this.qrtilbakemelding = "";
 		poengsum = 0;
 	}
 
-	public Stand(String navn, String beskrivelse, String youtubelink,
+	public Stand(String navn, String beskrivelse, String youtubelink, String qrstand, String qrtilbakemelding,
 			Integer poengsum) {
 		super();
 		this.navn = navn;
 		this.beskrivelse = beskrivelse;
 		this.youtubelink = youtubelink;
-		setQrStand(navn);	
-		setQrTilbakemelding(navn);
+		this.qrstand = qrstand;	
+		this.qrtilbakemelding = qrtilbakemelding;
 		this.poengsum = poengsum;
 	}
+
+	
 
 	public String getNavn() {
 		return navn;
@@ -64,32 +66,28 @@ public class Stand {
 		this.beskrivelse = beskrivelse;
 	}
 
-	public String getYoutubeLink() {
+	public String getYoutubelink() {
 		return youtubelink;
 	}
 
-	public void setYoutubeLink(String youtubeLink) {
-		this.youtubelink = youtubeLink;
+	public void setYoutubelink(String youtubelink) {
+		this.youtubelink = youtubelink;
 	}
 
-	public String getQrStand() {
+	public String getQrstand() {
 		return qrstand;
 	}
 
-	public void setQrStand(String navn) {
-		this.qrstand = "src/main/webapp/WEB-INF/QRKoder/" + navn + "StandQRKode.jpg";
-		String QR_Path = this.qrstand;
-		QRGenerator.generateQR("http://localhost:8080/stand?navn=" + navn, 350, 350, QR_Path);
+	public void setQrstand(String qrstand) {
+		this.qrstand = qrstand;
 	}
 
-	public String getQrTilbakemelding() {
+	public String getQrtilbakemelding() {
 		return qrtilbakemelding;
 	}
 
-	public void setQrTilbakemelding(String navn) {
-		this.qrtilbakemelding = "src/main/webapp/WEB-INF/QRKoder/" + navn + "TilbakemeldingQRKode.jpg";
-		String QR_Path = this.qrtilbakemelding;
-		QRGenerator.generateQR("http://localhost:8080/tilbakemelding?navn=" + navn, 350, 350, QR_Path);
+	public void setQrtilbakemelding(String qrtilbakemelding) {
+		this.qrtilbakemelding = qrtilbakemelding;
 	}
 
 	public Integer getPoengsum() {
