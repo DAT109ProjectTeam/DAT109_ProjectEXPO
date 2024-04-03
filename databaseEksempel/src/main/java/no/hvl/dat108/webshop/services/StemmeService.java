@@ -41,10 +41,10 @@ public class StemmeService {
 		if (!eksistererStemme(stemme.getBrukerid(), stemme.getNavn())) {
 			stemmerepo.save(stemme);
 		} else {
-			stemmerepo.delete(stemme);
+			Stemme stemmen = stemmerepo.findByBrukeridAndNavn(stemme.getBrukerid(), stemme.getNavn());
+			System.out.println(stemmen.toString());
+			stemmerepo.deleteById(stemmen.getId());
 			stemmerepo.save(stemme);
 		}
-
-		stemmerepo.save(stemme);
 	}
 }

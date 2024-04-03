@@ -15,7 +15,7 @@ import no.hvl.dat108.webshop.util.RolleUtil;
 public class MainExpoController {
 
 	private static RolleUtil rolleutil = new RolleUtil();
-	private static BrukerUtil brukerIdUtil = new BrukerUtil();
+	private static BrukerUtil brukerutil = new BrukerUtil();
 	
 	@GetMapping("/home")
     public String showHome(Model model, 
@@ -24,7 +24,7 @@ public class MainExpoController {
     		RedirectAttributes ra,
     		Session session) {
         
-		brukerIdUtil.nyBruker(request, response, model);
+		brukerutil.sjekkBruker(request, response, model);
 		rolleutil.sjekkRolle(request, response, model);
 		
         return "hovedside";

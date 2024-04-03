@@ -36,7 +36,7 @@ public class BrukerUtil {
 		return true;
 	}
 	
-	public void nyBruker(HttpServletRequest request, HttpServletResponse response, Model model) {
+	public void sjekkBruker(HttpServletRequest request, HttpServletResponse response, Model model) {
 		
 		if(sjekkOmNyBruker(request, response, model)){
 			this.nr++;

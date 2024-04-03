@@ -13,11 +13,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import no.hvl.dat108.webshop.objects.Stand;
 import no.hvl.dat108.webshop.services.StandService;
+import no.hvl.dat108.webshop.util.BrukerUtil;
+import no.hvl.dat108.webshop.util.RolleUtil;
 
 @Controller
 public class JuryRolleController {
 
 	@Autowired private StandService standservice;
+	
+	@Autowired private BrukerUtil brukeridutil;
+	
+	@Autowired private RolleUtil rolleutil;
 	
 	@GetMapping("/Jury")
 	public String getJuryRolleController(
@@ -26,6 +32,9 @@ public class JuryRolleController {
 			HttpServletResponse response, 
 			RedirectAttributes ra) {
 
+		brukeridutil.sjekkBruker(request, response, model);
+		rolleutil.sjekkRolle(request, response, model);
+		
 		Cookie[] cookies = request.getCookies();
 		String cookieValue = "";
 		if (cookies != null) {
@@ -35,11 +44,8 @@ public class JuryRolleController {
 					break;
 				}
 			}
-
-			// Modify the cookie value
+			
 			cookieValue = "Jury";
-
-			// Update the cookie
 			Cookie cookie = new Cookie("Rolle", cookieValue);
 			cookie.setPath("/");
 			cookie.setMaxAge(20);
@@ -53,7 +59,13 @@ public class JuryRolleController {
 	@GetMapping("/RangertVisning")
 	public String visRangerteStands(Model model,
 			HttpServletRequest request,
+			HttpServletResponse response, 
 			RedirectAttributes ra) {
+		
+		brukeridutil.sjekkBruker(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
+		
+		if(!rolle.equals("Jury"))return "redirect:/home";
 		
 		List<Stand> rangerteStander = standservice.rangerStander();
 		

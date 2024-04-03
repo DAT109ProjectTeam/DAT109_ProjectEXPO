@@ -27,6 +27,21 @@ public class Stemme {
 		this.navn = navn;
 		this.verdi = verdi;
 	}
+	
+	public Stemme(Integer id, Integer brukerid, String navn, int verdi) {
+		this.id = id;
+		this.brukerid = brukerid;
+		this.navn = navn;
+		this.verdi = verdi;
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public int getBrukerid() {
 		return brukerid;
@@ -50,6 +65,11 @@ public class Stemme {
 
 	public void setVerdi(int verdi) {
 		this.verdi = verdi;
+	}
+
+	@Override
+	public String toString() {
+		return "Stemme [id=" + id + ", brukerid=" + brukerid + ", navn=" + navn + ", verdi=" + verdi + "]\n";
 	}
 
 	

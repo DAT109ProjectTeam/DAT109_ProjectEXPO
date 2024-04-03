@@ -13,7 +13,7 @@ public class RolleUtil {
 	
 	private int cookieTimer = 60;
 	
-	public void sjekkRolle(HttpServletRequest request, HttpServletResponse response, Model model) {
+	public String sjekkRolle(HttpServletRequest request, HttpServletResponse response, Model model) {
 		
 		Cookie[] cookies = request.getCookies();
 		String cookieValue = null;
@@ -24,7 +24,7 @@ public class RolleUtil {
 				if (cookie.getName().equals("Rolle")) {
 					cookieValue = cookie.getValue();
 					model.addAttribute("Rolle", cookieValue);
-					break;
+					return cookieValue;
 				}
 			}
 		}
@@ -36,7 +36,9 @@ public class RolleUtil {
             rolleCookie.setMaxAge(cookieTimer);
             response.addCookie(rolleCookie);
             model.addAttribute("Rolle", rolleCookie.getValue());
+            return rolleCookie.getValue();
         }
+        return cookieValue;
 	}
 	
 }
