@@ -42,7 +42,6 @@ public class StemmeService {
 			stemmerepo.save(stemme);
 		} else {
 			Stemme stemmen = stemmerepo.findByBrukeridAndNavn(stemme.getBrukerid(), stemme.getNavn());
-			System.out.println(stemmen.toString());
 			stemmerepo.deleteById(stemmen.getId());
 			stemmerepo.save(stemme);
 		}

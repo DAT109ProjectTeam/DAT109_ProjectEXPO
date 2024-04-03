@@ -33,6 +33,10 @@ public class RegistreringsController {
 	public String registrerSkjema(Model model,
 			@Valid @ModelAttribute Stand stand) {
 		
+		if(stand.getNavn() == null) {
+			return "redirect:/registrer";
+		}
+		
 		standservice.lagreStand(stand);
 		
 		return "stand";
