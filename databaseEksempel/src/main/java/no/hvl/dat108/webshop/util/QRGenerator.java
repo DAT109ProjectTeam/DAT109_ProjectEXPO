@@ -35,14 +35,14 @@ public class QRGenerator {
 		}
 		
 	}
-	public String setQrStand(String navn) {
+	public String genererQrStand(String navn) {
 		String qrkode = "src/main/webapp/WEB-INF/QRKoder/" + navn + "StandQRKode.jpg";
 		String QR_Path = qrkode;
 		QRGenerator.generateQR("http://localhost:8080/stand?navn=" + navn, 350, 350, QR_Path);
 		return qrkode;
 	}
 
-	public String setQrTilbakemelding(String navn) {
+	public String genererQrTilbakemelding(String navn) {
 		String qrkode = "src/main/webapp/WEB-INF/QRKoder/" + navn + "TilbakemeldingQRKode.jpg";
 		String QR_Path = qrkode;
 		QRGenerator.generateQR("http://localhost:8080/tilbakemelding?navn=" + navn, 350, 350, QR_Path);
