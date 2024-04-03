@@ -1,26 +1,26 @@
-package no.hvl.dat108.webshop.objects;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.when;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import jakarta.validation.Validation;
-import jakarta.validation.Validator;
-
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock; 
-import org.mockito.junit.jupiter.MockitoExtension;
-
-
+//package no.hvl.dat108.webshop.objects;
+//
+//import static org.junit.jupiter.api.Assertions.assertTrue;
+//import static org.mockito.Mockito.when;
+//
+//import java.util.List;
+//import java.util.stream.Collectors;
+//
+//import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.extension.ExtendWith;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.test.context.junit4.SpringRunner;
+//
+//import jakarta.validation.Validation;
+//import jakarta.validation.Validator;
+//
+//import org.junit.runner.RunWith;
+//import org.mockito.InjectMocks;
+//import org.mockito.Mock; 
+//import org.mockito.junit.jupiter.MockitoExtension;
+//
+//
 
 //@ExtendWith(MockitoExtension.class)
 //@RunWith(SpringRunner.class)
