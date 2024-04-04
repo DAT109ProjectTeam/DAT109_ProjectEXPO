@@ -3,10 +3,12 @@ package no.hvl.dat108.webshop.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -21,7 +23,7 @@ import no.hvl.dat108.webshop.util.BrukerUtil;
 import no.hvl.dat108.webshop.util.RolleUtil;
 
 @Controller
-public class TilbakemeldingController {
+public class TilbakemeldingController implements ErrorController {
 
 	@Autowired private StandService standservice;
 	
@@ -40,11 +42,11 @@ public class TilbakemeldingController {
 			) {
 
 		if (navn == null) {
-			return "redirect:/home";
+			return "redirect:";
 		}
 		
 		if(!standservice.eksistererStand(navn)) {
-			return "redirect:/home";
+			return "redirect:";
 		}
 		
 		brukerutil.sjekkBruker(request, response, model);
@@ -79,5 +81,17 @@ public class TilbakemeldingController {
         model.addAttribute("navn", navn);
 
         return "takk";
+    }
+	
+	@RequestMapping("/error")
+    public String handleError() {
+        // You can direct to a specific controller or return a specific view here
+        // For example:
+        // return "errorPage"; // Assuming you have a view named errorPage
+        return "redirect:home"; // Redirect to a specific controller
+    }
+
+    public String getErrorPath() {
+    	return "/error";
     }
 }

@@ -49,6 +49,6 @@ public class AdminRolleController {
 			
 		}
 
-		return "redirect:/home";
+		return "redirect:";
 	}
 }

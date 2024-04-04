@@ -13,7 +13,7 @@
 	<groupId>no.hvl.dat108</groupId>
 	<artifactId>spring-boot-starter-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging> <!-- Default er jar -->
+	<packaging>war</packaging> <!-- Default er jar -->
 
 	<properties>
 		<java.version>17</java.version>

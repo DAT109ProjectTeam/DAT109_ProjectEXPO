@@ -53,7 +53,7 @@ public class JuryRolleController {
 			
 		}
 
-		return "redirect:/home";
+		return "redirect:";
 	}
 	
 	@GetMapping("/RangertVisning")
@@ -65,7 +65,7 @@ public class JuryRolleController {
 		brukeridutil.sjekkBruker(request, response, model);
 		String rolle = rolleutil.sjekkRolle(request, response, model);
 		
-		if(!rolle.equals("Jury"))return "redirect:/home";
+		if(!rolle.equals("Jury"))return "redirect:";
 		
 		List<Stand> rangerteStander = standservice.rangerStander();
 		
