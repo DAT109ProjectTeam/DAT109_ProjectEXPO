@@ -16,4 +16,4 @@ public class SpringMvcApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(SpringMvcApplication.class, args);
     }
-}
+} 	
