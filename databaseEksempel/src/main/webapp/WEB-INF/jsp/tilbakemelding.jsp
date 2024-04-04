@@ -60,7 +60,7 @@ form {
 
 <body>
     <div>
-        <form action="/tilbakemelding" method="POST">
+        <form action="tilbakemelding" method="POST">
             <p>Please select your rating:</p>
             <input type="hidden" name="navn" value="${navn}">
             <label><input type="radio" name="rating" value="1"> 1</label><br>

@@ -63,7 +63,7 @@ form {
         <p>Du gav ${navn}</p>
         <p>${rating}</p>
         <p>poeng</p>
-        <form action="/home" method="GET">
+        <form action="home" method="GET">
             <button class="button" type="submit" role="button">Tilbake til startside</button>
         </form>
     </div>

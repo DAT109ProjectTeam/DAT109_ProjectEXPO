@@ -8,7 +8,7 @@
 <body>
     <h1>Registrer en stand</h1>
     <p>Her kan du registrere en stand du vil legge til på expo</p>
-    <form:form method="POST" action="/registrer" modelAttribute="stand">
+    <form:form method="POST" action="registrer" modelAttribute="stand">
         <fieldset>
             <div>
                 <label for="navn">Navn:</label>

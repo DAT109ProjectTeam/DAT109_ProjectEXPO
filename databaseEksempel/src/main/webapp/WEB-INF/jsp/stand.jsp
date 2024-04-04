@@ -26,7 +26,7 @@
     <c:if test="${not empty stand.youtubelink}">
         <iframe width="560" height="315" src="<c:out value="${stand.youtubelink}" />" frameborder="0" allowfullscreen></iframe>
     </c:if>
-    <form method="GET" action="/home">
+    <form method="GET" action="home">
         <!-- Remove empty fieldset if not needed -->
         <button type="submit">Legg til stand</button>
     </form>

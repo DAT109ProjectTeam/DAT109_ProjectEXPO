@@ -86,7 +86,7 @@ form {
 			</tbody>
 		</table>
 
-		<form action="/home" method="GET">
+		<form action="home" method="GET">
 			<button class="button" type="submit" role="button">Tilbake
 				til startside</button>
 		</form>
