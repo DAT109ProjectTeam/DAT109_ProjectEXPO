@@ -11,7 +11,7 @@
 
 
 	<groupId>no.hvl.dat108</groupId>
-	<artifactId>databaseEksempel</artifactId>
+	<artifactId>spring-boot-starter-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging> <!-- Default er jar -->
 
