@@ -31,9 +31,11 @@ public class RegistreringsController {
 	
 	@PostMapping("/registrer")
 	public String registrerSkjema(Model model,
-			@Valid @ModelAttribute Stand stand) {
+			@Valid @ModelAttribute Stand stand,
+			RedirectAttributes ra) {
 		
-		if(stand.getNavn() == null) {
+		if(stand.getNavn() == null || stand.getNavn().equals("")) {
+			ra.addFlashAttribute("feilmelding", "Må ha et navn på stand");
 			return "redirect:/registrer";
 		}
 		

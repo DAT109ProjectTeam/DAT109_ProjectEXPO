@@ -15,7 +15,7 @@ body {
 
 .container {
 	text-align: center;
-}	
+}
 
 .button {
 	padding: 10px 20px;
@@ -44,10 +44,17 @@ button:hover {
 <body>
 	<h1>Admin Panel</h1>
 	<p>Her har du tilgang til admin funksjonene under:</p>
+	<c:if test="${status == false}">
+		<form method="GET" action="StartEvent">
+			<button type="submit">Start Event</button>
+		</form>
+	</c:if>
 
-	<form method="GET" action="startevent">
-		<button type="submit">Start Event</button>
-	</form>
+	<c:if test="${status == true}">
+		<form method="GET" action="StoppEvent">
+			<button type="submit">Stop Event</button>
+		</form>
+	</c:if>
 
 	<form method="GET" action="registrer">
 		<button type="submit">Registrer Stand</button>
@@ -55,10 +62,6 @@ button:hover {
 
 	<form method="GET" action="reset">
 		<button type="submit">Reset Database</button>
-	</form>
-
-	<form method="GET" action="stoppevent">
-		<button type="submit">Stop Event</button>
 	</form>
 	<br>
 	<br>

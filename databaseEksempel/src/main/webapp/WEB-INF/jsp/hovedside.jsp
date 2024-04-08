@@ -93,6 +93,7 @@ video {
 
 		<h1>EXPO_2024</h1>
 		<p>Velkommen til HVL Expo2024</p>
+		<p style="color:red">${feilmelding}</p>
 		<form action="standlist	e" method="GET">
 			<button class="button" role="button" type="submit">Liste over Stands</button>
 		</form>

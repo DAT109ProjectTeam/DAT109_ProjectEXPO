@@ -54,8 +54,11 @@ public class StandController {
 		brukeridutil.sjekkBruker(request, response, model);
 		String rolle = rolleutil.sjekkRolle(request, response, model);
 
-		if (!rolle.equals("Jury") && !rolle.equals("Admin"))
+		if (!rolle.equals("Jury") && !rolle.equals("Admin")) {
+			ra.addFlashAttribute("feilmelding", "Du har ikke tilgang"); 
 			return "redirect:";
+		}
+			
 
 		List<Stand> rangerteStander = standservice.rangerStander();
 

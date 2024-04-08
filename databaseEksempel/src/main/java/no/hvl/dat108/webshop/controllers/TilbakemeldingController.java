@@ -1,7 +1,5 @@
 package no.hvl.dat108.webshop.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import no.hvl.dat108.webshop.objects.Stand;
@@ -42,10 +39,12 @@ public class TilbakemeldingController implements ErrorController {
 			) {
 
 		if (navn == null) {
+			ra.addFlashAttribute("feilmelding", "Ugyldig url/navn på stand");
 			return "redirect:/home";
 		}
 		
 		if(!standservice.eksistererStand(navn)) {
+			ra.addFlashAttribute("feilmelding", "Ugyldig navn på stand");
 			return "redirect:/home";
 		}
 		
@@ -63,11 +62,13 @@ public class TilbakemeldingController implements ErrorController {
     		Model model, 
     		HttpServletRequest request,
 			HttpServletResponse response,
+			RedirectAttributes ra,
     		@RequestParam(name = "rating", defaultValue = "0") int rating, 
     		@RequestParam(required = false) String navn
     		) {
 
 		if(rating <= 0 || rating > 5) {
+			ra.addFlashAttribute("feilmelding", "Venligst velg en verdi 1-5");
 			return "redirect:/tilbakemelding?navn="+navn;
 		}
 		

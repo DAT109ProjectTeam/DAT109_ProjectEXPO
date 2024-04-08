@@ -37,6 +37,12 @@ public class MainExpoController {
         return "hovedside";
     }
 	
+	@PostMapping("/home")
+	public String postHome(Model model) {
+		
+		return "redirect:home";
+	}
+	
 	@GetMapping("/")
 	public String getEmpty(Model model) {
 		

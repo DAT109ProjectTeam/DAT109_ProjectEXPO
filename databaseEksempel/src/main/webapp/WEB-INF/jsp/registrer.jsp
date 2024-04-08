@@ -11,6 +11,7 @@
     <form:form method="POST" action="registrer" modelAttribute="stand">
         <fieldset>
             <div>
+            	<p style="color:red">${feilmelding}</p>
                 <label for="navn">Navn:</label>
                 <form:input type="text" id="navn" path="navn" />
             </div>
@@ -22,8 +23,12 @@
                 <label for="youtubelink">YouTube Link:</label>
                 <form:input type="text" id="youtubelink" path="youtubelink" />
             </div>
+            <button type="submit">Registrer</button>	
         </fieldset>
-        <button type="submit">Legg til stand</button>
+        
     </form:form>
+    <form method="GET" action="home">
+    	<button type="submit">Tilbake til startsiden</button>
+    </form>
 </body>
 </html>

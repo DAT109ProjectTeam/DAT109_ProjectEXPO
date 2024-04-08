@@ -63,6 +63,7 @@
     <div>
         <form id="ratingForm" action="tilbakemelding" method="POST">
             <p>Please select your rating:</p>
+            <p style="color:red">${feilmelding}</p>
             <input type="hidden" name="navn" value="${navn}">
             <label><input type="radio" name="rating" value="1"> 1</label><br>
             <label><input type="radio" name="rating" value="2"> 2</label><br>
