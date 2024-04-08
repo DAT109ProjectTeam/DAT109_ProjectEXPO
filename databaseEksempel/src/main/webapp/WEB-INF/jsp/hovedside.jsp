@@ -93,7 +93,7 @@ video {
 
 		<h1>EXPO_2024</h1>
 		<p>Velkommen til HVL Expo2024</p>
-		<form action="standliste" method="GET">
+		<form action="standlist	e" method="GET">
 			<button class="button" role="button" type="submit">Liste over Stands</button>
 		</form>
 		<c:if test="${Rolle != 'Admin' && Rolle != 'Jury'}">

@@ -44,7 +44,7 @@ public class StandController {
 
 		model.addAttribute("standliste", standliste);
 
-		return "stand";
+		return "standliste";
 	}
 
 	@GetMapping("/RangertVisning")

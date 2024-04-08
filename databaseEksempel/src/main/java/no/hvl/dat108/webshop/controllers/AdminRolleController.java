@@ -9,6 +9,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import no.hvl.dat108.webshop.services.StandService;
 import no.hvl.dat108.webshop.util.BrukerUtil;
 import no.hvl.dat108.webshop.util.RolleUtil;
 
@@ -18,6 +20,8 @@ public class AdminRolleController {
 	@Autowired private BrukerUtil brukeridutil;
 	
 	@Autowired private RolleUtil rolleutil;
+	
+	@Autowired private StandService ss;
 	
 	@GetMapping("/Admin")
 	public String getAdminRolleController(Model model, 
@@ -68,4 +72,20 @@ public class AdminRolleController {
 		return "adminside";
 	}
 	
+	@GetMapping("reset")
+	public String reset(Model model,
+			HttpServletRequest request, 
+			HttpServletResponse response) {
+		
+		brukeridutil.sjekkBruker(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
+		
+		if(!rolle.equals("Admin")) {
+			return "redirect:/home";
+		}
+		
+		ss.resetDatabase();
+		
+		return "redirect:home";
+	}
 }

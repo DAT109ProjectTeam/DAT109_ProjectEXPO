@@ -45,19 +45,19 @@ button:hover {
 	<h1>Admin Panel</h1>
 	<p>Her har du tilgang til admin funksjonene under:</p>
 
-	<form method="POST" action="startevent">
+	<form method="GET" action="startevent">
 		<button type="submit">Start Event</button>
 	</form>
 
-	<form method="POST" action="registrer">
+	<form method="GET" action="registrer">
 		<button type="submit">Registrer Stand</button>
 	</form>
 
-	<form method="POST" action="reset">
+	<form method="GET" action="reset">
 		<button type="submit">Reset Database</button>
 	</form>
 
-	<form method="POST" action="stoppevent">
+	<form method="GET" action="stoppevent">
 		<button type="submit">Stop Event</button>
 	</form>
 	<br>

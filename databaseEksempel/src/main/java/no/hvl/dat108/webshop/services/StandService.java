@@ -28,13 +28,13 @@ public class StandService {
 	public void lagreStand(Stand stand) {
 		
 		if(!eksistererStand(stand.getNavn())) {
-			stand.setQrstand(qrgenerator.genererQrStand(stand.getNavn()));
-			stand.setQrtilbakemelding(qrgenerator.genererQrTilbakemelding(stand.getNavn()));
+			qrgenerator.genererQrStand(stand);
+			qrgenerator.genererQrTilbakemelding(stand);
 			standrepo.save(stand);
 		} else {
 			standrepo.deleteById(stand.getNavn());
-			stand.setQrstand(qrgenerator.genererQrStand(stand.getNavn()));
-			stand.setQrtilbakemelding(qrgenerator.genererQrTilbakemelding(stand.getNavn()));
+			qrgenerator.genererQrStand(stand);
+			qrgenerator.genererQrTilbakemelding(stand);
 			standrepo.save(stand);
 		}
 		
@@ -81,5 +81,28 @@ public class StandService {
 		standliste.sort(Comparator.comparingInt(Stand::getPoengsum).reversed());
 		
 		return standliste;
+	}
+	
+	public void resetDatabase() {
+		
+		List<Stand> liste = standrepo.findAll();
+		for(Stand stand : liste) {
+			standrepo.deleteById(stand.getNavn());
+		}
+
+		//TA VEKK SEINARE
+		Stand stand1 = new Stand("Stand1", "tester", "cat");
+		Stand stand2 = new Stand("Stand2", "tester", "cat");
+		Stand stand3 = new Stand("Stand3", "tester", "cat");
+		qrgenerator.genererQrStand(stand1);
+		qrgenerator.genererQrTilbakemelding(stand1);
+		qrgenerator.genererQrStand(stand2);
+		qrgenerator.genererQrTilbakemelding(stand2);
+		qrgenerator.genererQrStand(stand3);
+		qrgenerator.genererQrTilbakemelding(stand3);
+		standrepo.save(stand1);
+		standrepo.save(stand2);
+		standrepo.save(stand3);
+		
 	}
 }
