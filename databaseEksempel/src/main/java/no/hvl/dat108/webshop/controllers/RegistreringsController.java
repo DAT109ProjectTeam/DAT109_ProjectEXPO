@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import no.hvl.dat108.webshop.objects.Stand;
 import no.hvl.dat108.webshop.services.StandService;
 import no.hvl.dat108.webshop.util.QRGenerator;

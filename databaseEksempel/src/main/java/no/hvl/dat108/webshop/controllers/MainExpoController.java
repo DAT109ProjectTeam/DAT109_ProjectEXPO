@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.websocket.Session;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import no.hvl.dat108.webshop.util.BrukerUtil;
 import no.hvl.dat108.webshop.util.RolleUtil;
 
@@ -22,8 +22,7 @@ public class MainExpoController {
     public String showHome(Model model, 
     		HttpServletRequest request,
     		HttpServletResponse response,
-    		RedirectAttributes ra,
-    		Session session) {
+    		RedirectAttributes ra) {
         
 		brukerutil.sjekkBruker(request, response, model);
 		rolleutil.sjekkRolle(request, response, model);
