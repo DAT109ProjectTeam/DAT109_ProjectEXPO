@@ -42,11 +42,11 @@ public class TilbakemeldingController implements ErrorController {
 			) {
 
 		if (navn == null) {
-			return "redirect:";
+			return "redirect:/home";
 		}
 		
 		if(!standservice.eksistererStand(navn)) {
-			return "redirect:";
+			return "redirect:/home";
 		}
 		
 		brukerutil.sjekkBruker(request, response, model);

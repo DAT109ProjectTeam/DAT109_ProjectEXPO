@@ -31,6 +31,11 @@ public class StandService {
 			stand.setQrstand(qrgenerator.genererQrStand(stand.getNavn()));
 			stand.setQrtilbakemelding(qrgenerator.genererQrTilbakemelding(stand.getNavn()));
 			standrepo.save(stand);
+		} else {
+			standrepo.deleteById(stand.getNavn());
+			stand.setQrstand(qrgenerator.genererQrStand(stand.getNavn()));
+			stand.setQrtilbakemelding(qrgenerator.genererQrTilbakemelding(stand.getNavn()));
+			standrepo.save(stand);
 		}
 		
 	}

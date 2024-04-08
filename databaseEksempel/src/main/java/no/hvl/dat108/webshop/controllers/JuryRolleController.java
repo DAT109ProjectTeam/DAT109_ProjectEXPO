@@ -53,7 +53,7 @@ public class JuryRolleController {
 			
 		}
 
-		return "redirect:";
+		return "redirect:/home";
 	}
 	
 	@GetMapping("/RangertVisning")
