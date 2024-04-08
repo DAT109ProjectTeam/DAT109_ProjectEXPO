@@ -32,29 +32,34 @@ button {
 	cursor: pointer;
 	margin-top: 15px;
 	margin-bottom: 10px;
-	background-color: #008000ad;
+	background-color: #008000ad; /* Default button color */
 	transition: 0.3s background-color;
 }
 
-button:hover {
-	background-color: #008000;
+button.red {
+	background-color: #ff0000; /* Red button color */
+}
+
+button.blue {
+	background-color: #0000ff; /* Blue button color */
 }
 </style>
 </head>
 <body>
 	<h1>Admin Panel</h1>
 	<p>Her har du tilgang til admin funksjonene under:</p>
-	<c:if test="${status == false}">
-		<form method="GET" action="StartEvent">
-			<button type="submit">Start Event</button>
-		</form>
-	</c:if>
-
-	<c:if test="${status == true}">
-		<form method="GET" action="StoppEvent">
-			<button type="submit">Stop Event</button>
-		</form>
-	</c:if>
+	<c:choose>
+		<c:when test="${status == false}">
+			<form method="GET" action="StartEvent">
+				<button type="submit" class="blue">Start Event</button>
+			</form>
+		</c:when>
+		<c:when test="${status == true}">
+			<form method="GET" action="StoppEvent">
+				<button type="submit" class="red">Stop Event</button>
+			</form>
+		</c:when>
+	</c:choose>
 
 	<form method="GET" action="registrer">
 		<button type="submit">Registrer Stand</button>

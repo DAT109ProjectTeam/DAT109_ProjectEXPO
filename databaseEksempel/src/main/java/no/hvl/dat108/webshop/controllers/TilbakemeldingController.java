@@ -1,5 +1,6 @@
 package no.hvl.dat108.webshop.controllers;
 
+import no.hvl.dat108.webshop.controllers.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -48,6 +49,11 @@ public class TilbakemeldingController implements ErrorController {
 			return "redirect:/home";
 		}
 		
+		if(!AdminRolleController.ErEventetAktivt) {
+			ra.addFlashAttribute("feilmelding", "Eventet er ikke startet");
+			return "redirect:/home";
+		}
+		
 		brukerutil.sjekkBruker(request, response, model);
 		rolleutil.sjekkRolle(request, response, model);
 		
@@ -74,6 +80,11 @@ public class TilbakemeldingController implements ErrorController {
 		
 		brukerutil.sjekkBruker(request, response, model);
 		rolleutil.sjekkRolle(request, response, model);
+		
+		if(!AdminRolleController.ErEventetAktivt) {
+			ra.addFlashAttribute("feilmelding", "Eventet er ikke startet");
+			return "redirect:/home";
+		}
 		
 		Stemme stemme = new Stemme(brukerutil.getBrukerId(request), navn, rating);
 		stemmeservice.lagreStemme(stemme);
