@@ -1,0 +1,28 @@
+-- Drop the table if it exists
+DROP TABLE IF EXISTS Dat109.Stand;
+
+-- Create the Stand table in the Dat109 schema
+CREATE TABLE Dat109.Stand (
+    navn VARCHAR(255) PRIMARY KEY,
+    beskrivelse VARCHAR(255),
+    youtubeLink VARCHAR(255),
+    qrstand VARCHAR(255), -- Rename this column to qrstand
+    qrtilbakemelding VARCHAR(255), -- Rename this column to qrtilbakemelding
+    poengsum INT
+);
+
+-- Insert example entries into the Stand table
+INSERT INTO Dat109.Stand (navn, beskrivelse, youtubelink, qrStand, qrtilbakemelding, poengsum)
+VALUES 
+('Stand1', 'Description of Stand 1', 'https://www.youtube.com/watch?v=video1', 'src/main/webapp/WEB-INF/QRKoder/Stand1StandQRKode.jpg', 'src/main/webapp/WEB-INF/QRKoder/Stand1TilbakemeldingQRKode.jpg', '0'),
+('Stand2', 'Description of Stand 2', 'https://www.youtube.com/watch?v=video2', 'src/main/webapp/WEB-INF/QRKoder/Stand2StandQRKode.jpg', 'src/main/webapp/WEB-INF/QRKoder/Stand2TilbakemeldingQRKode.jpg', '0'),
+('Stand3', 'Description of Stand 3', 'https://www.youtube.com/watch?v=video3', 'src/main/webapp/WEB-INF/QRKoder/Stand3StandQRKode.jpg', 'src/main/webapp/WEB-INF/QRKoder/Stand3TilbakemeldingQRKode.jpg', '0');
+
+DROP TABLE DAT109.Stemme;
+
+CREATE TABLE Dat109.Stemme (
+    id SERIAL PRIMARY KEY,
+    brukerid int,
+    navn VARCHAR(255),
+    verdi INTEGER
+);
