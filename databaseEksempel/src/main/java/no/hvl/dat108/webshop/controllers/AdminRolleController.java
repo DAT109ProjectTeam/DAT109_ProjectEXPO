@@ -51,4 +51,21 @@ public class AdminRolleController {
 
 		return "redirect:/home";
 	}
+	
+	@GetMapping("/AdminSide")
+	public String getAdminSide(Model model,
+			HttpServletRequest request, 
+			HttpServletResponse response,
+			RedirectAttributes ra) {
+		
+		brukeridutil.sjekkBruker(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
+		
+		if(!rolle.equals("Admin")) {
+			return "redirect:/home";
+		}
+		
+		return "adminside";
+	}
+	
 }

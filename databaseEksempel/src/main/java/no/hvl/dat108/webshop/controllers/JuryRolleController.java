@@ -19,8 +19,6 @@ import no.hvl.dat108.webshop.util.RolleUtil;
 @Controller
 public class JuryRolleController {
 
-	@Autowired private StandService standservice;
-	
 	@Autowired private BrukerUtil brukeridutil;
 	
 	@Autowired private RolleUtil rolleutil;
@@ -55,23 +53,4 @@ public class JuryRolleController {
 
 		return "redirect:/home";
 	}
-	
-	@GetMapping("/RangertVisning")
-	public String visRangerteStands(Model model,
-			HttpServletRequest request,
-			HttpServletResponse response, 
-			RedirectAttributes ra) {
-		
-		brukeridutil.sjekkBruker(request, response, model);
-		String rolle = rolleutil.sjekkRolle(request, response, model);
-		
-		if(!rolle.equals("Jury"))return "redirect:";
-		
-		List<Stand> rangerteStander = standservice.rangerStander();
-		
-		model.addAttribute("standliste", rangerteStander);
-		
-		return "rangert";
-	}
-	
 }
