@@ -67,7 +67,7 @@ public class TilbakemeldingController implements ErrorController {
     		@RequestParam(required = false) String navn
     		) {
 
-		if(rating < 0 || rating > 5) {
+		if(rating <= 0 || rating > 5) {
 			return "redirect:/tilbakemelding?navn="+navn;
 		}
 		

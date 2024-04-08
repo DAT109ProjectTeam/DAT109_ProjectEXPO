@@ -93,7 +93,9 @@ video {
 
 		<h1>EXPO_2024</h1>
 		<p>Velkommen til HVL Expo2024</p>
-
+		<form action="standliste" method="GET">
+			<button class="button" role="button" type="submit">Liste over Stands</button>
+		</form>
 		<c:if test="${Rolle != 'Admin' && Rolle != 'Jury'}">
 			<div class="qrscanner">
 				<h1>Skann QR-Kode</h1>
@@ -140,38 +142,33 @@ video {
 
 		<c:if test="${Rolle == 'Admin'}">
 			<div class="spectator-button">
-				<p>Du er med i juryen</p>
-				<a href="spectatorlogin">
-					<button class="button" type="submit" role="button">Tilskuer(Spectator)</button>
-				</a>
+				<p>Du er en administrator</p>
+				<form class="jury-button" action="RangertVisning" method="GET">
+					<button class="button" role="button" type="submit">RangertVisning</button>
+				</form>
+				<form class="jury-button" action="AdminSide" method="GET">
+					<button class="button" role="button" type="submit">Admin
+						Side</button>
+				</form>
 			</div>
 		</c:if>
 
 		<br>
 
-		<!-- <div class="exhibitor-button">
-			<a href="exhibitorlogin">
-				<button class="button" role="button">Utstiller (Exhibitor)</button>
-			</a>
-		</div>
-		<br> -->
-
 		<c:if test="${Rolle == 'Jury'}">
 			<form class="jury-button" action="RangertVisning" method="GET">
 				<p>Test</p>
-				<button class="button" role="button" type="submit" >RangertVisning</button>
+				<button class="button" role="button" type="submit">RangertVisning</button>
 			</form>
 		</c:if>
-
-		<p>Value of 'Rolle' cookie: ${Rolle}</p>
+		<%-- <p>Value of 'Rolle' cookie: ${Rolle}</p>
 		<p>Value of 'ID' cookie: ${ID}</p>
 
 		<p>
 			For øyeblikket er Admin/Jury controllerene satt til: <br>
 			localhost:8080/Admin <br> og <br> localhost:8080/Jury <br>
 			som vil forandre rollen en bruken har
-		</p>
-
+		</p> --%>
 	</div>
 </body>
 
