@@ -115,7 +115,17 @@ public class AdminRolleController {
 	
 	@GetMapping("/StartEvent")
 	public String getStartEvent(Model model,
+			HttpServletRequest request, 
+			HttpServletResponse response,
 			RedirectAttributes ra) {
+		
+		brukeridutil.sjekkBruker(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
+		
+		if(!rolle.equals("Admin")) {
+			ra.addFlashAttribute("feilmelding","Du er ikke en Admin");
+			return "redirect:/home";
+		}
 		
 		ErEventetAktivt = true;
 		ra.addFlashAttribute("feilmelding", "Eventet er startet");
@@ -125,7 +135,17 @@ public class AdminRolleController {
 	
 	@GetMapping("/StoppEvent")
 	public String getStoppEvent(Model model,
+			HttpServletRequest request, 
+			HttpServletResponse response,
 			RedirectAttributes ra) {
+		
+		brukeridutil.sjekkBruker(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
+		
+		if(!rolle.equals("Admin")) {
+			ra.addFlashAttribute("feilmelding","Du er ikke en Admin");
+			return "redirect:/home";
+		}
 		
 		ErEventetAktivt = false;
 		ra.addFlashAttribute("feilmelding", "Eventet er stoppet");

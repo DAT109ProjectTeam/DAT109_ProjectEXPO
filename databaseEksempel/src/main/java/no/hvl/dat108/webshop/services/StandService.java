@@ -1,6 +1,5 @@
 package no.hvl.dat108.webshop.services;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -95,9 +94,9 @@ public class StandService {
 		qrgenerator.reset();
 		
 		//TA VEKK SEINARE
-		Stand stand1 = new Stand("Stand1", "tester", "cat");
-		Stand stand2 = new Stand("Stand2", "tester", "cat");
-		Stand stand3 = new Stand("Stand3", "tester", "cat");
+		Stand stand1 = new Stand("Stand1", "tester", "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JxS5E-kZc2s?si=CZYMYpt8Oa4FRzMI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+		Stand stand2 = new Stand("Stand2", "tester", "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JxS5E-kZc2s?si=CZYMYpt8Oa4FRzMI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+		Stand stand3 = new Stand("Stand3", "tester", "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JxS5E-kZc2s?si=CZYMYpt8Oa4FRzMI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
 		qrgenerator.genererQrStand(stand1);
 		qrgenerator.genererQrTilbakemelding(stand1);
 		qrgenerator.genererQrStand(stand2);

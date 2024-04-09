@@ -58,7 +58,7 @@ public class StandController {
 
 		if (!rolle.equals("Jury") && !rolle.equals("Admin")) {
 			ra.addFlashAttribute("feilmelding", "Du har ikke tilgang"); 
-			return "redirect:";
+			return "redirect:home";
 		}
 			
 

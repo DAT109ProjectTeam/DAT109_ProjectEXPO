@@ -47,30 +47,32 @@ button.blue {
 </style>
 </head>
 <body>
-	<h1>Admin Panel</h1>
-	<p>Her har du tilgang til admin funksjonene under:</p>
-	<c:choose>
-		<c:when test="${status == false}">
-			<form method="GET" action="StartEvent">
-				<button type="submit" class="blue">Start Event</button>
-			</form>
-		</c:when>
-		<c:when test="${status == true}">
-			<form method="GET" action="StoppEvent">
-				<button type="submit" class="red">Stop Event</button>
-			</form>
-		</c:when>
-	</c:choose>
+	<div class="container">
+		<h1>Admin Panel</h1>
+		<p>Her har du tilgang til admin funksjonene under:</p>
+		<c:choose>
+			<c:when test="${status == false}">
+				<form method="GET" action="StartEvent">
+					<button type="submit" class="blue">Start Event</button>
+				</form>
+			</c:when>
+			<c:when test="${status == true}">
+				<form method="GET" action="StoppEvent">
+					<button type="submit" class="red">Stop Event</button>
+				</form>
+			</c:when>
+		</c:choose>
 
-	<form method="GET" action="registrer">
-		<button type="submit">Registrer Stand</button>
-	</form>
+		<form method="GET" action="registrer">
+			<button type="submit">Registrer Stand</button>
+		</form>
 
-	<form method="GET" action="reset">
-		<button type="submit">Reset Database</button>
-	</form>
-	<form method="GET" action="home">
-		<button type="submit">Gå Ut/Tilbake</button>
-	</form>
+		<form method="GET" action="reset">
+			<button type="submit">Reset Database</button>
+		</form>
+		<form method="GET" action="home">
+			<button type="submit">Gå Ut/Tilbake</button>
+		</form>
+	</div>
 </body>
 </html>

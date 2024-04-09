@@ -4,13 +4,12 @@
 <html lang="no">
 <head>
 <link rel="stylesheet" href="css/Standard.css">
-<title>Standliste</title>
+<title>StandlisteRangert</title>
 <meta charset="UTF-8">
 <style>
-/* CSS for table layout */
 .container {
-	margin: 0 auto; /* Center the container */
-	width: 80%; /* Adjust as needed */
+	margin: 0 auto;
+	width: 80%;
 	border-collapse: collapse;
 }
 
@@ -24,18 +23,15 @@ th {
 	background-color: #f2f2f2;
 }
 
-/* Centering the div */
 .center-div {
-	margin: 0 auto; /* Center the div horizontally */
-	width: 100%; /* Make the div full-width */
-	max-width: 600px; /* Adjust as needed */
+	margin: 0 auto; /
+	width: 100%;
+	max-width: 600px;
 }
 
-/* Adding background color to th elements */
 td {
-	background-color: #f2f2f2; /* Light gray background */
+	background-color: #f2f2f2;
 }
-
 </style>
 </head>
 <body>
@@ -60,6 +56,10 @@ td {
 								src="${stand.qrstand}" alt="QRkode til siden">
 						</a></td>
 					</tr>
+					<c:if test="${not empty stand.poengsum && stand.poengsum > 0}">
+						<th>Poengsum</th>
+						<td>${stand.poengsum}</td>
+					</c:if>
 				</table>
 				<br>
 			</c:forEach>

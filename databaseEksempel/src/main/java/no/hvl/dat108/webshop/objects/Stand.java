@@ -1,8 +1,6 @@
 package no.hvl.dat108.webshop.objects;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -33,7 +31,7 @@ public class Stand {
         this.youtubelink = youtubeLink;
         this.qrstand = "";
         this.qrtilbakemelding = "";
-        poengsum = 0;
+        poengsum = -1;
     }
 
     public Stand(String navn, String beskrivelse, String youtubelink, String qrstand, String qrtilbakemelding,

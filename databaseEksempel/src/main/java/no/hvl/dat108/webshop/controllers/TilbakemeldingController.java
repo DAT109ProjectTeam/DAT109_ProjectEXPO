@@ -1,6 +1,5 @@
 package no.hvl.dat108.webshop.controllers;
 
-import no.hvl.dat108.webshop.controllers.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;

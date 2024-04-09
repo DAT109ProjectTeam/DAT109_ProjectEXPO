@@ -6,7 +6,6 @@
 <title>Registrering av Stand</title>
 <meta charset="UTF-8">
 <style>
-
 th, td {
 	border: 1px solid #ddd;
 	padding: 8px;
@@ -34,6 +33,12 @@ th {
 				<td><c:if test="${not empty stand.youtubelink}">
                     ${stand.youtubelink}
                 </c:if></td>
+			</tr>
+			<tr>
+				<th>QRkode til siden:</th>
+				<td><a href="/tilbakemelding?navn=${stand.navn}"> <img	
+						src="${stand.qrtilbakemelding}" alt="QRkode til siden">
+				</a></td>
 			</tr>
 		</table>
 		<form method="GET" action="home">
