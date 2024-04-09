@@ -2,108 +2,28 @@
 <html>
 
 <head>
-<style>
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-	background-color: #339c6b;
-}
-
-.container {
-	text-align: center;
-}
-
-.button {
-	padding: 10px 20px;
-	font-size: 16px;
-}
-
-.qrscanner {
-	width: 100%;
-	max-width: 500px;
-	margin: 5px;
-}
-
-.qrscanner h1 {
-	color: #ffffff;
-}
-
-.qrsections {
-	background-color: #ffffff;
-	padding: 50px 30px;
-	border: 1.5px solid #b2b2b2;
-	width: 500px;
-	height: 400px;
-	border-radius: 0.25em;
-	box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
-}
-
-#my-qr-reader {
-	padding: 20px !important;
-	border: 1.5px solid #b2b2b2 !important;
-	border-radius: 8px;
-	width: 440px;
-	height: 340px;
-}
-
-#my-qr-reader img[alt="Info icon"] {
-	display: none;
-}
-
-#my-qr-reader img[alt="Camera based scan"] {
-	width: 200px !important;
-	height: 200px !important;
-}
-
-button {
-	padding: 10px 20px;
-	border: 1px solid #b2b2b2;
-	outline: none;
-	border-radius: 0.25em;
-	color: white;
-	font-size: 15px;
-	cursor: pointer;
-	margin-top: 15px;
-	margin-bottom: 10px;
-	background-color: #008000ad;
-	transition: 0.3s background-color;
-}
-
-button:hover {
-	background-color: #008000;
-}
-
-#html5-qrcode-anchor-scan-type-change {
-	text-decoration: none !important;
-	color: #1d9bf0;
-}
-
-video {
-	width: 100% !important;
-	border: 1px solid #b2b2b2 !important;
-	border-radius: 0.25em;
-}
-</style>
+<head>
+<link rel="stylesheet" href="css/hovedside.css">
+<link rel="stylesheet" href="css/Standard.css">
+</head>
 </head>
 
 <body>
+	<div class="logo-container">
+		<img
+			src="https://t4.ftcdn.net/jpg/05/24/88/53/360_F_524885373_R8zFwFRm7phP46V79ZixQtp0nb056w7o.jpg"
+			alt="HVL Logo" class="hvl-logo">
+	</div>
 	<div class="container">
 
 		<h1>EXPO_2024</h1>
 		<p>Velkommen til HVL Expo2024</p>
-		<p style="color:red">${feilmelding}</p>
-		<form action="standlist	e" method="GET">
-			<button class="button" role="button" type="submit">Liste over Stands</button>
-		</form>
+		<p style="color: red">${feilmelding}</p>
 		<c:if test="${Rolle != 'Admin' && Rolle != 'Jury'}">
 			<div class="qrscanner">
-				<h1>Skann QR-Kode</h1>
-				<div class="qrsections">
-					<div id="my-qr-reader"></div>
-					<button id="start-scanner">Start Skanner</button>
-				</div>
+				<h3>SKANN QR-KODE</h3>
+				<div id="my-qr-reader"></div>
+				<button id="start-scanner">Start Skanner</button>
 			</div>
 			<script src="https://unpkg.com/html5-qrcode"></script>
 			<script>
@@ -139,15 +59,19 @@ video {
                 );
             });
         </script>
+			<form action="standlist	e" method="GET">
+				<button class="button" role="button" type="submit">Liste
+					over Stands</button>
+			</form>
 		</c:if>
 
 		<c:if test="${Rolle == 'Admin'}">
-			<div class="spectator-button">
-				<p>Du er en administrator</p>
-				<form class="jury-button" action="RangertVisning" method="GET">
+			<div>
+				<p style="color: green">Du er en administrator</p>
+				<form action="RangertVisning" method="GET">
 					<button class="button" role="button" type="submit">RangertVisning</button>
 				</form>
-				<form class="jury-button" action="AdminSide" method="GET">
+				<form action="AdminSide" method="GET">
 					<button class="button" role="button" type="submit">Admin
 						Side</button>
 				</form>
@@ -157,8 +81,8 @@ video {
 		<br>
 
 		<c:if test="${Rolle == 'Jury'}">
-			<form class="jury-button" action="RangertVisning" method="GET">
-				<p>Test</p>
+			<p style="color: green">Du er med i Juryen</p>
+			<form action="RangertVisning" method="GET">
 				<button class="button" role="button" type="submit">RangertVisning</button>
 			</form>
 		</c:if>

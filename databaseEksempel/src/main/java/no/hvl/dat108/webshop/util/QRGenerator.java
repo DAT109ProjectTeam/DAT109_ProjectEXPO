@@ -54,4 +54,29 @@ public class QRGenerator {
         generateQR(qrUrl, 350, 350, qrPath);
         stand.setQrtilbakemelding(qrFileName);
     }
+    
+    public void reset() {
+        try {
+            // Define the directory path
+            Path directoryPath = Paths.get(qrCodesDirectory);
+
+            // Iterate through the directory and its subdirectories
+            Files.walk(directoryPath)
+                    .filter(Files::isRegularFile)
+                    .filter(path -> path.toString().toLowerCase().endsWith(".png"))
+                    .forEach(this::deleteFile);
+        } catch (IOException e) {
+            // Handle IOException
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteFile(Path filePath) {
+        try {
+            Files.deleteIfExists(filePath);
+        } catch (IOException e) {
+            // Handle IOException for individual file deletion
+            e.printStackTrace();
+        }
+    }
 }

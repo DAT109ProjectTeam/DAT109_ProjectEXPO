@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import no.hvl.dat108.webshop.objects.Stand;
@@ -28,9 +29,10 @@ public class StandController {
 	@Autowired private RolleUtil rolleutil;
 
 	@GetMapping("/stand")
-	public String getStand(Model model) {
+	public String getStand(Model model,
+			@RequestParam String navn) {
 
-		Stand stand = ss.finnStand("Stand1");
+		Stand stand = ss.finnStand(navn);
 
 		model.addAttribute("stand", stand);
 

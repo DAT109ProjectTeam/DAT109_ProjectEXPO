@@ -55,7 +55,12 @@ public class TilbakemeldingController implements ErrorController {
 		}
 		
 		brukerutil.sjekkBruker(request, response, model);
-		rolleutil.sjekkRolle(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
+		
+		if(rolle.equals("Admin") || rolle.equals("Jury")) {
+			ra.addFlashAttribute("feilmelding", "Du har ikke tilgang til stemming");
+			return "redirect:/home";
+		}
 		
 		Stand stand = standservice.finnStand(navn);
 		model.addAttribute("navn", stand.getNavn());
@@ -79,10 +84,15 @@ public class TilbakemeldingController implements ErrorController {
 		}
 		
 		brukerutil.sjekkBruker(request, response, model);
-		rolleutil.sjekkRolle(request, response, model);
+		String rolle = rolleutil.sjekkRolle(request, response, model);
 		
 		if(!AdminRolleController.ErEventetAktivt) {
 			ra.addFlashAttribute("feilmelding", "Eventet er ikke startet");
+			return "redirect:/home";
+		}
+		
+		if(rolle.equals("Admin") || rolle.equals("Jury")) {
+			ra.addFlashAttribute("feilmelding", "Du har ikke tilgang til stemming");
 			return "redirect:/home";
 		}
 		

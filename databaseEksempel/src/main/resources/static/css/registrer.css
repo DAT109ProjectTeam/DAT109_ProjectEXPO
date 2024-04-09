@@ -1,0 +1,106 @@
+/* Body stiler */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Container stiler */
+
+.container {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/007/125/804/small/beautiful-light-blue-pastel-background-minimal-scene-blue-empty-room-stand-show-cosmetic-product-stage-showcase-pastel-color-sky-blue-background-vector.jpg");
+    background-size: cover;
+    /* This will ensure the image covers the entire container */
+    background-position: center;
+    /* This will center the background image */
+    /* Your existing styles */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+
+/* Venstre logo stiler */
+
+.venstre-logo {
+    width: 75px;
+    /* Juster størrelsen etter behov */
+    height: top;
+    margin-top: 10px;
+    /* Juster toppmargen etter behov */
+}
+
+
+/* Høyre logo stiler */
+
+.høyre-logo {
+    width: 100px;
+    /* Juster størrelsen etter behov */
+    height: auto;
+}
+
+
+/* Posisjoneringsstiler for høyre logo */
+
+.top-right-logo {
+    position: absolute;
+    top: 10px;
+    /* Juster topp-posisjon etter behov */
+    right: 20px;
+    /* Juster høyre-posisjon etter behov */
+}
+
+
+/* Overskrift stiler */
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Stiler for etiketter */
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* Stiler for tekstinndata */
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Stiler for innsendingsknapp */
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/* Hover-stiler for innsendingsknapp */
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

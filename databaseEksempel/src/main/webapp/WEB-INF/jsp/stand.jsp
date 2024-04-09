@@ -1,34 +1,44 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html lang="no">
 <head>
-    <title>Registrering av Stand</title>
-    <meta charset="UTF-8">
-    <script type="text/javascript">
-        function convertToEmbeddedLink(normalLink) {
-            var videoID;
-            var match = normalLink.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
-            if (match && match[1]) {
-                videoID = match[1];
-                return "https://www.youtube.com/embed/" + videoID;
-            }
-            // If the link doesn't match the expected format, return null or handle it appropriately.
-            return null;
-        }
-    </script>
+<link rel="stylesheet" href="css/Standard.css">
+<title>Registrering av Stand</title>
+<meta charset="UTF-8">
+<style>
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+</style>
 </head>
 <body>
-    <h1>Side for stand</h1>
-    <p>All info ligger under</p>
-    <h2>Navn: ${stand.navn}</h2>
-    <p>Beskrivelse: ${stand.beskrivelse}</p>
-    <h2>Youtube video</h2>
-    <c:if test="${not empty stand.youtubelink}">
-        <iframe width="560" height="315" src="<c:out value="${stand.youtubelink}" />" frameborder="0" allowfullscreen></iframe>
-    </c:if>
-    <form method="GET" action="home">
-        <!-- Remove empty fieldset if not needed -->
-        <button type="submit">Legg til stand</button>
-    </form>
+	<div class="container">
+		<table>
+			<tr>
+				<th>Navn:</th>
+				<td>${stand.navn}</td>
+			</tr>
+			<tr>
+				<th>Beskrivelse:</th>
+				<td>${stand.beskrivelse}</td>
+			</tr>
+			<tr>
+				<th>Youtube video:</th>
+				<td><c:if test="${not empty stand.youtubelink}">
+                    ${stand.youtubelink}
+                </c:if></td>
+			</tr>
+		</table>
+		<form method="GET" action="home">
+			<button type="submit">Tilbake til startsiden</button>
+		</form>
+	</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package no.hvl.dat108.webshop;
+	package no.hvl.dat108.webshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

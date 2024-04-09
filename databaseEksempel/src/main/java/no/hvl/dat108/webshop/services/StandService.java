@@ -32,10 +32,12 @@ public class StandService {
 			qrgenerator.genererQrTilbakemelding(stand);
 			standrepo.save(stand);
 		} else {
-			standrepo.deleteById(stand.getNavn());
-			qrgenerator.genererQrStand(stand);
-			qrgenerator.genererQrTilbakemelding(stand);
-			standrepo.save(stand);
+			Stand eksisterende = standrepo.findByNavn(stand.getNavn());
+			Stand nystand = stand;
+			standrepo.delete(eksisterende);
+			qrgenerator.genererQrStand(nystand);
+			qrgenerator.genererQrTilbakemelding(nystand);
+			standrepo.save(nystand);
 		}
 		
 	}
@@ -90,6 +92,8 @@ public class StandService {
 			standrepo.deleteById(stand.getNavn());
 		}
 
+		qrgenerator.reset();
+		
 		//TA VEKK SEINARE
 		Stand stand1 = new Stand("Stand1", "tester", "cat");
 		Stand stand2 = new Stand("Stand2", "tester", "cat");
@@ -103,6 +107,5 @@ public class StandService {
 		standrepo.save(stand1);
 		standrepo.save(stand2);
 		standrepo.save(stand3);
-		
 	}
 }

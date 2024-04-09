@@ -4,6 +4,7 @@
 <head>
 <title>Registrering av Stand</title>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/Standard.css">
 <style>
 body {
 	display: grid;
@@ -68,9 +69,6 @@ button.blue {
 	<form method="GET" action="reset">
 		<button type="submit">Reset Database</button>
 	</form>
-	<br>
-	<br>
-	<br>
 	<form method="GET" action="home">
 		<button type="submit">Gå Ut/Tilbake</button>
 	</form>

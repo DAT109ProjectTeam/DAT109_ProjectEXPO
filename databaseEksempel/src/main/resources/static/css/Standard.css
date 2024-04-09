@@ -1,0 +1,137 @@
+.header {
+    margin: auto;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding-top: 1em;
+    /*padding: 20px;*/
+}
+
+h1 {
+    margin: auto;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 4em;
+}
+
+h3 {
+    margin: auto;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+a:has(h1) {
+    text-decoration: none;
+}
+
+body {
+    /*background-color: #dadada;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: auto;
+    height: auto;
+    /*her kan vi sikkert velge en annen background !!*/
+    background-image: url("https://img.freepik.com/free-photo/blue-smoke-collection-white-background_1112-1510.jpg?w=1380&t=st=1712274169~exp=1712274769~hmac=25304fd6847ac752e88db4796f5a0dc9c91cd6ebef42396d1ea6c0751d1a5b04");
+    /* background-image: url("https://img.freepik.com/free-photo/abstract-purple-smooth-wave-lines_1017-24865.jpg?w=1380&t=st=1712274069~exp=1712274669~hmac=920ee471314a86d4230213e488a278b6602b585f639cbfddfa2e3e0fb995b614");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+.container {
+    text-align: center;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.qrscanner {
+    width: 100%;
+    max-width: 500px;
+    margin: 5px;
+}
+
+.qrscanner h1 {
+    color: #52686d;
+}
+
+#my-qr-reader {
+    padding: 20px !important;
+    border: 1.5px solid #b2b2b2 !important;
+    border-radius: 8px;
+    width: 440px;
+    height: 340px;
+}
+
+#my-qr-reader img[alt="Info icon"] {
+    display: none;
+}
+
+#my-qr-reader img[alt="Camera based scan"] {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+button {
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 0.25em;
+    color: black;
+    border: 0.125em solid black;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: #f8e69f;
+    transition: 0.3s background-color;
+}
+
+button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+#html5-qrcode-anchor-scan-type-change {
+    text-decoration: none !important;
+    color: #1d9bf0;
+}
+
+video {
+    width: 100% !important;
+    border: 1px solid #b2b2b2 !important;
+    border-radius: 0.25em;
+}
+
+
+/*logo***********************************************************************/
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    /* Legg til ønsket margin etter behov */
+}
+
+.hvl-logo {
+    max-width: 200px;
+    /* Juster størrelsen på logoen etter behov */
+    /* Eventuelle andre stiler for logoen */
+    
+    
+}
+
+.adminpassord {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
