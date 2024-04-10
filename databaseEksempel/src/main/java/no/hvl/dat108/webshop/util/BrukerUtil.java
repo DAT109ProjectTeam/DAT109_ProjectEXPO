@@ -13,11 +13,11 @@ public class BrukerUtil {
 
 	private int nr;
 	
+	@Value("${app.id.cookie.timer}")
 	private int cookieTimer;
 	
 	public BrukerUtil() {
 		this.nr = 0;
-		this.cookieTimer = 20;
 	}
 	
 	private boolean sjekkOmNyBruker(HttpServletRequest request, HttpServletResponse response, Model model) {

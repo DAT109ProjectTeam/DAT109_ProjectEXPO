@@ -52,14 +52,10 @@ td {
 					</tr>
 					<tr>
 						<th>QRkode til siden:</th>
-						<td><a href="/stand?navn=${stand.navn}"> <img
+						<td><a href="${pageContext.request.contextPath}/stand?navn=${stand.navn}"> <img
 								src="${stand.qrstand}" alt="QRkode til siden">
 						</a></td>
 					</tr>
-					<c:if test="${not empty stand.poengsum && stand.poengsum > 0}">
-						<th>Poengsum</th>
-						<td>${stand.poengsum}</td>
-					</c:if>
 				</table>
 				<br>
 			</c:forEach>

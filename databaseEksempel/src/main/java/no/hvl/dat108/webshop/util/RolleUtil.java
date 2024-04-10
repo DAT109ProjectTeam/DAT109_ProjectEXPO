@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class RolleUtil {
 	
-	private int cookieTimer = 60;
+	@Value("${app.rolle.cookie.timer}")
+	private int cookieTimer;
 	
 	public String sjekkRolle(HttpServletRequest request, HttpServletResponse response, Model model) {
 		

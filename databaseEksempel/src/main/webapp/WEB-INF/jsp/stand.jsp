@@ -36,7 +36,7 @@ th {
 			</tr>
 			<tr>
 				<th>QRkode til siden:</th>
-				<td><a href="/tilbakemelding?navn=${stand.navn}"> <img	
+				<td><a href="${pageContext.request.contextPath}/tilbakemelding?navn=${stand.navn}"> <img	
 						src="${stand.qrtilbakemelding}" alt="QRkode til siden">
 				</a></td>
 			</tr>
