@@ -8,14 +8,17 @@
 </head>
 <body>
 	<div class="container">
+		<!-- <div class="top-right-logo">
+			<img
+				src="https://helseforsking.no/wp-content/uploads/2017/01/logo-hvl-1030x454.jpg"
+				alt="Høyre Logo" class="høyre-logo">
+		</div> -->
 		<div class="logo-container">
 			<img
 				src="https://t4.ftcdn.net/jpg/05/24/88/53/360_F_524885373_R8zFwFRm7phP46V79ZixQtp0nb056w7o.jpg"
 				alt="HVL Logo" class="hvl-logo">
 		</div>
-		<div class="top-right-logo">
-                    <img src="https://helseforsking.no/wp-content/uploads/2017/01/logo-hvl-1030x454.jpg" alt="Høyre Logo" class="høyre-logo">
-                </div>
+
 		<h1>Registrer en stand</h1>
 		<p>Her kan du registrere en stand du vil legge til på expo</p>
 		<form:form method="POST" action="registrer" modelAttribute="stand">

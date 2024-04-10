@@ -77,7 +77,7 @@ public class QRGenerator {
     public void genererQrTilbakemelding(Stand stand) {
     	String contextPath = request.getContextPath();
         String baseUrl = request.getRequestURL().toString().replace(request.getRequestURI(), contextPath);
-        String qrUrl = baseUrl + "/stand?navn=" + stand.getNavn();
+        String qrUrl = baseUrl + "/tilbakemelding?navn=" + stand.getNavn();
         String qrFileName = stand.getNavn() + "TilbakemeldingQRKode.png";
         generateAndSaveQR(qrUrl, 350, 350, qrFileName);
         stand.setQrtilbakemelding(qrFileName);

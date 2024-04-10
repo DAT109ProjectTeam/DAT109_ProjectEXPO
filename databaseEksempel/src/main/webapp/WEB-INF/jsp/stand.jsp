@@ -35,7 +35,7 @@ th {
                 </c:if></td>
 			</tr>
 			<tr>
-				<th>QRkode til siden:</th>
+				<th>QRkode til tilbakemelding:</th>
 				<td><a href="${pageContext.request.contextPath}/tilbakemelding?navn=${stand.navn}"> <img	
 						src="${stand.qrtilbakemelding}" alt="QRkode til siden">
 				</a></td>
