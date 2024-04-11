@@ -21,6 +21,7 @@ public class Stemme {
     public Stemme() {
 
     }
+   
 
     public Stemme(Integer brukerid, String navn, int verdi) {
         this.brukerid = brukerid;

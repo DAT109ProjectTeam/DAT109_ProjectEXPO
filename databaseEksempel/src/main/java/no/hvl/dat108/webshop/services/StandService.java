@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import no.hvl.dat108.webshop.objects.Stand;
 import no.hvl.dat108.webshop.objects.Stemme;
 import no.hvl.dat108.webshop.repos.StandRepo;
@@ -23,7 +24,9 @@ public class StandService {
 	public List<Stand> finnAlleStands() {
 		return standrepo.findAll();
 	}
-	
+	//***************************************************** */
+
+
 	public void lagreStand(Stand stand) {
 		
 		if(!eksistererStand(stand.getNavn())) {
@@ -41,9 +44,26 @@ public class StandService {
 		
 	}
 
+
+
+
+
+
+
+
+
+
+
 	public Stand finnStand(String navn) {
 		return standrepo.findByNavn(navn);
 	}
+
+
+
+
+
+
+
 
 	public boolean eksistererStand(String navn) {
 
@@ -56,6 +76,13 @@ public class StandService {
 		return true;
 	}
 	
+
+
+
+
+
+
+
 	public List<Stand> rangerStander(){
 		
 		List<Stand> standliste = standrepo.findAll();
@@ -83,6 +110,18 @@ public class StandService {
 		
 		return standliste;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	public void resetDatabase() {
 		
@@ -96,6 +135,7 @@ public class StandService {
 		qrgenerator.reset();
 		
 		//TA VEKK SEINARE
+		
 		Stand stand1 = new Stand("Stand1", "tester", "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JxS5E-kZc2s?si=CZYMYpt8Oa4FRzMI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
 		Stand stand2 = new Stand("Stand2", "tester", "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JxS5E-kZc2s?si=CZYMYpt8Oa4FRzMI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
 		Stand stand3 = new Stand("Stand3", "tester", "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/JxS5E-kZc2s?si=CZYMYpt8Oa4FRzMI\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
@@ -108,5 +148,7 @@ public class StandService {
 		standrepo.save(stand1);
 		standrepo.save(stand2);
 		standrepo.save(stand3);
-	}
+	
+	
+}
 }
