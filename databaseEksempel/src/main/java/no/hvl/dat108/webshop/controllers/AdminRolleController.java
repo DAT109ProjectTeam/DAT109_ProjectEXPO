@@ -108,6 +108,8 @@ public class AdminRolleController {
 			return "redirect:/home";
 		}
 		
+		model.addAttribute("feilmelding", "Databasen ble reset");
+		
 		ss.resetDatabase();
 		
 		return "redirect:home";
