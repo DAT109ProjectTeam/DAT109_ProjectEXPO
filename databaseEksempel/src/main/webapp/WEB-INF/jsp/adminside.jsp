@@ -62,6 +62,11 @@ button.blue {
 				</form>
 			</c:when>
 		</c:choose>
+		<form method="POST" action="ChangeCookieDuration">
+			<label for=lengde>Varighet på Cookies(timer):</label><br>
+			<input id="lengde" name="lengde">
+			<button type="submit">Lagre</button>
+		</form>
 
 		<form method="GET" action="registrer">
 			<button type="submit">Registrer Stand</button>

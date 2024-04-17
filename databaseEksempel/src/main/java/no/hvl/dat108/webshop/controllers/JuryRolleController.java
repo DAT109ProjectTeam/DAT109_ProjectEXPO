@@ -44,7 +44,7 @@ public class JuryRolleController {
 			cookieValue = "Jury";
 			Cookie cookie = new Cookie("Rolle", cookieValue);
 			cookie.setPath("/");
-			cookie.setMaxAge(20);
+			cookie.setMaxAge(RolleUtil.cookieTimer);
 			response.addCookie(cookie);
 			
 		}

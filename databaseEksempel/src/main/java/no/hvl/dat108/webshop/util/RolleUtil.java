@@ -1,6 +1,5 @@
 package no.hvl.dat108.webshop.util;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
@@ -11,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class RolleUtil {
 	
-	@Value("${app.rolle.cookie.timer}")
-	private int cookieTimer;
+	public static int cookieTimer = 20;
 	
 	public String sjekkRolle(HttpServletRequest request, HttpServletResponse response, Model model) {
 		
@@ -41,5 +39,12 @@ public class RolleUtil {
         }
         return cookieValue;
 	}
+	
+	public double modifyRolleCookieDuration(double lengde) {
+		double varighet = lengde * 60 * 60;
+
+		cookieTimer = (int)varighet;
+		return lengde;
+    }
 	
 }
