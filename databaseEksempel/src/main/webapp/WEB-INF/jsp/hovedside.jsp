@@ -2,10 +2,8 @@
 <html>
 
 <head>
-<head>
 <link rel="stylesheet" href="css/hovedside.css">
 <link rel="stylesheet" href="css/Standard.css">
-</head>
 </head>
 
 <body>
